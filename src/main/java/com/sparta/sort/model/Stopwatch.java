@@ -1,6 +1,6 @@
-package com.sparta.sort;
+package com.sparta.sort.model;
 
-public class Stopwatch implements Timer {
+public class Stopwatch implements Timeable {
     private long startTime = 0;
     private long endTime = 0;
     private boolean timing = false;
@@ -12,12 +12,6 @@ public class Stopwatch implements Timer {
 
     public void stop() {
         this.endTime = System.nanoTime();
-        this.timing = false;
-    }
-
-    public void reset() {
-        this.startTime = 0;
-        this.endTime = 0;
         this.timing = false;
     }
 

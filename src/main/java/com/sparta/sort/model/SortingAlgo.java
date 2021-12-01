@@ -1,4 +1,7 @@
-package com.sparta.sort;
+package com.sparta.sort.model;
+
+import com.sparta.sort.model.Sortable;
+import com.sparta.sort.model.Stopwatch;
 
 public abstract class SortingAlgo implements Sortable {
     private String name;
@@ -12,7 +15,7 @@ public abstract class SortingAlgo implements Sortable {
         arr[j] = dummy;
     }
 
-    public abstract void sort(int[] arr, int i, int j, boolean timing);
+    public abstract void sortArray(int[] arr, int i, int j, boolean timing);
 
     public abstract long getSortingTime();
 }

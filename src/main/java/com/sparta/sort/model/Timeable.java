@@ -1,8 +1,7 @@
-package com.sparta.sort;
+package com.sparta.sort.model;
 
-public interface Timer {
+public interface Timeable {
     void start();
     void stop();
-    void reset();
     long getElapsedNanoseconds();
 }

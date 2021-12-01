@@ -1,4 +1,5 @@
-package com.sparta.sort;
+package com.sparta.sort.model;
+
 public class QuickSortAlgo extends SortingAlgo {
     private String name = "Quick sort";
     private Stopwatch timer = new Stopwatch();
@@ -28,13 +29,13 @@ public class QuickSortAlgo extends SortingAlgo {
         return (i + 1);
     }
 
-    public void sort(int[] arr, int low, int high, boolean timing) {
+    public void sortArray(int[] arr, int low, int high, boolean timing) {
         if (timing) timer.start();
         if (low < high) {
             int pi = partition(arr, low, high);
 
-            sort(arr, low, pi - 1, false);
-            sort(arr, pi + 1, high, false);
+            sortArray(arr, low, pi - 1, false);
+            sortArray(arr, pi + 1, high, false);
         }
         if (timing) timer.stop();
     }

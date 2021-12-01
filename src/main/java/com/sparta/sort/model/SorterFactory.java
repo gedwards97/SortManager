@@ -1,4 +1,5 @@
-package com.sparta.sort;
+package com.sparta.sort.model;
+
 
 public class SorterFactory {
     public static SortingAlgo getAlgo(String algoName) {
