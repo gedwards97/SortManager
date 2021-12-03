@@ -1,7 +1,7 @@
 package com.sparta.sort.controller;
 
-import com.sparta.sort.model.SorterFactory;
-import com.sparta.sort.model.SortingAlgo;
+import com.sparta.sort.model.factory.SorterFactory;
+import com.sparta.sort.model.algorithms.SortingAlgo;
 
 import java.util.Arrays;
 import java.util.List;
@@ -78,7 +78,7 @@ public class UserInput {
         UserInput.compareSort = validateBinary();
     }
 
-    public static SortingAlgo getPrimaryAlgo() {
+    public SortingAlgo getPrimaryAlgo() {
         return primaryAlgo;
     }
 

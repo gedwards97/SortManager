@@ -1,7 +1,6 @@
-package com.sparta.sort.model;
+package com.sparta.sort.model.algorithms;
 
-import com.sparta.sort.model.Sortable;
-import com.sparta.sort.model.Stopwatch;
+import com.sparta.sort.model.tools.Stopwatch;
 
 public abstract class SortingAlgo implements Sortable {
     private String name;

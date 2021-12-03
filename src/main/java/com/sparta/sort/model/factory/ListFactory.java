@@ -1,4 +1,4 @@
-package com.sparta.sort.model;
+package com.sparta.sort.model.factory;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

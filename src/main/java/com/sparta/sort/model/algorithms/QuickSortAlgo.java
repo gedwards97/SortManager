@@ -1,4 +1,6 @@
-package com.sparta.sort.model;
+package com.sparta.sort.model.algorithms;
+
+import com.sparta.sort.model.tools.Stopwatch;
 
 public class QuickSortAlgo extends SortingAlgo {
     private String name = "Quick sort";

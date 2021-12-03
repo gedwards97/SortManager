@@ -1,4 +1,4 @@
-package com.sparta.sort.model;
+package com.sparta.sort.model.tools;
 
 public class Stopwatch implements Timeable {
     private long startTime = 0;

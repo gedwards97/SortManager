@@ -1,4 +1,4 @@
-package com.sparta.sort.model;
+package com.sparta.sort.model.tools;
 
 public interface Timeable {
     void start();

@@ -2,10 +2,11 @@ package com.sparta.sort.view;
 
 import com.sparta.sort.controller.UserInput;
 
-public class Application {
+public class MainMenu {
     private UserInput userInput = new UserInput();
+    private boolean complete = false;
 
-    public void launch() {
+    public void run() {
         System.out.println("--- Welcome to the Sort manager! ---");
         System.out.println("Please enter the size of the data structure you'd like to sort.");
         userInput.setDataStructureLength();
@@ -21,13 +22,23 @@ public class Application {
         } else {
             System.out.println("SOZ - can't compare algos rn");
         }
+
+        setComplete(true);
     }
 
-    public void singleSort() {
-
+    public boolean isComplete() {
+        return complete;
     }
 
-    public void compareSort() {
+    public void setComplete(boolean complete) {
+        this.complete = true;
+    }
 
+    public UserInput getUserInput() {
+        return userInput;
+    }
+
+    public void setUserInput(UserInput userInput) {
+        this.userInput = userInput;
     }
 }
