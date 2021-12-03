@@ -31,6 +31,7 @@ public class Application {
 
     private void viewController() {
         PerformanceView.printArrays(unsorterdArray, sortedArray);
+
         PerformanceView.printTimedPerformance(sortRunner.getPrimaryAlgo().getName(),
                 sortRunner.getPrimaryAlgo().getSortingTime());
     }

@@ -2,6 +2,8 @@ package com.sparta.sort.model.algorithms;
 
 import com.sparta.sort.model.tools.Stopwatch;
 
+import java.util.Arrays;
+
 public class BubbleSortAlgo extends SortingAlgo implements Sortable {
     private String name = "Bubble sort";
     private Stopwatch timer = new Stopwatch();
@@ -16,12 +18,13 @@ public class BubbleSortAlgo extends SortingAlgo implements Sortable {
 
     public void sortArray(int arr[], int start, int end, boolean timing) {
         if (timing) timer.start();
-        for (int i = start; i < end; i++)
-            for (int j = start; j < end-i-1; j++)
+        for (int i = start; i < end; i++) {
+            for (int j = start; j < end-i-1; j++) {
                 if (arr[j] > arr[j+1])
-                {
                     this.swap(arr, j, j+1);
-                }
+            }
+        }
         if (timing) timer.stop();
     }
+
 }
