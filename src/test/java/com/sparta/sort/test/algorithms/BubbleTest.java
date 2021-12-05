@@ -1,47 +1,114 @@
-//package com.sparta.sort.test.algorithms;
-//
-//import com.sparta.sort.model.algorithms.SortingAlgo;
-//import org.junit.jupiter.api.DisplayName;
-//import org.junit.jupiter.api.Test;
-//
-//import static org.junit.jupiter.api.Assertions.*;
-//
-//
-//public class BubbleTest {
-//    SortingAlgo bubble = new BubbleSortAlgo();
-//
-//    @DisplayName("Test null input")
-//    @Test
-//    public void testNullInput() {
-//        int[] array = null;
-//        bubble.sortArray(null, 0, 0 , false);
-//        assertNull(array);
-//    }
-//
-//    @DisplayName("Test empty array input")
-//    @Test
-//    public void testEmptyArray() {
-//        int[] array = {};
-//        bubble.sortArray(array, 0, array.length, false);
-//        int[] expected = {};
-//        assertArrayEquals(expected, array);
-//    }
-//
-//    @DisplayName("Simple array input")
-//    @Test
-//    public void testSimpleArray() {
-//        int[] array = {2, 3, 1};
-//        int[] expected = {1, 2, 3};
-//        bubble.sortArray(array, 0, array.length, false);
-//        assertArrayEquals(expected, array);
-//    }
-//
-//    @DisplayName("Array with negatives")
-//    @Test
-//    public void testNegatives() {
-//        int[] array = {-1, -9, 8, -100};
-//        int[] expected = {-100, -9, -1, 8};
-//        bubble.sortArray(array, 0, array.length, false);
-//        assertArrayEquals(expected, array);
-//    }
-//}
+package com.sparta.sort.test.algorithms;
+
+import com.sparta.sort.model.algorithms.BubbleSort;
+import com.sparta.sort.model.algorithms.SortingAlgo;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+
+public class BubbleTest {
+    BubbleSort bubble = new BubbleSort();
+
+    @DisplayName("Test null input")
+    @Test
+    public void testNullInput() {
+        List list = null;
+        List sorted = bubble.sort(list, false);
+        assertNull(sorted);
+    }
+
+    @DisplayName("Test empty array list")
+    @Test
+    public void testEmptyArrayList() {
+        List expected = new ArrayList<>();
+        List sorted = bubble.sort(expected, false);
+        assertEquals(expected, sorted);
+    }
+
+    @DisplayName("Test empty linked list")
+    @Test
+    public void testEmptyLinkedList() {
+        List expected = new LinkedList();
+        List sorted = bubble.sort(expected, false);
+        assertEquals(expected, sorted);
+    }
+
+    @DisplayName("Simple int array list")
+    @Test
+    public void testSimpleArrayList() {
+        List list = new ArrayList();
+        List expected = new ArrayList();
+
+        list.add(6);
+        list.add(-3);
+        list.add(5);
+
+        expected.addAll(list);
+
+        List result = bubble.sort(list, false);
+        Collections.sort(expected);
+
+        assertEquals(expected, result);
+    }
+
+    @DisplayName("Simple int linked list")
+    @Test
+    public void testSimpleLinkedList() {
+        List list = new LinkedList();
+        List expected = new LinkedList();
+
+        list.add(6);
+        list.add(-3);
+        list.add(5);
+
+        expected.addAll(list);
+
+        List result = bubble.sort(list, false);
+        Collections.sort(expected);
+
+        assertEquals(expected, result);
+    }
+
+    @DisplayName("Simple string array list")
+    @Test
+    public void simpleStringArrayList() {
+        List list = new ArrayList();
+        List expected = new ArrayList();
+
+        list.add("pepper");
+        list.add("george");
+        list.add("abba");
+
+        expected.addAll(list);
+
+        List result = bubble.sort(list, false);
+        Collections.sort(expected);
+
+        assertEquals(expected, result);
+    }
+
+    @DisplayName("Simple string linked list")
+    @Test
+    public void testSimpleArray() {
+        List list = new LinkedList();
+        List expected = new LinkedList();
+
+        list.add("pepper");
+        list.add("george");
+        list.add("abba");
+
+        expected.addAll(list);
+
+        List result = bubble.sort(list, false);
+        Collections.sort(expected);
+
+        assertEquals(expected, result);
+    }
+}

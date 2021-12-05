@@ -14,6 +14,8 @@ public class BubbleSort<T extends Comparable<T>> extends SortingAlgo {
     }
 
     public List<T> sort(List<T> list, boolean timing) {
+        if (list == null) return null;
+
         if (timing) super.timer.start();
         for (int i = 0; i < list.size(); i++)
             for (int j = 0; j < list.size()-i-1; j++)
