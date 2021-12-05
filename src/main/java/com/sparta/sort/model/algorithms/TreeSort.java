@@ -1,7 +1,6 @@
 package com.sparta.sort.model.algorithms;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -88,6 +87,8 @@ public class TreeSort<T extends Comparable<T>> extends SortingAlgo{
     }
 
     public List<T> sort(List<T> list, boolean timing) {
+        if (list == null) return null;
+
         List<T> orderedList;
         if (timing) super.timer.start();
         treeInsert(list);

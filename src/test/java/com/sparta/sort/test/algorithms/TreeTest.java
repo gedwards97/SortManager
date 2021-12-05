@@ -1,6 +1,6 @@
 package com.sparta.sort.test.algorithms;
 
-import com.sparta.sort.model.algorithms.BubbleSort;
+import com.sparta.sort.model.algorithms.TreeSort;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -9,17 +9,17 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-
-public class BubbleTest {
-    BubbleSort bubble = new BubbleSort();
+public class TreeTest {
+    TreeSort tree = new TreeSort();
 
     @DisplayName("Test null input")
     @Test
     public void testNullInput() {
         List list = null;
-        List sorted = bubble.sort(list, false);
+        List sorted = tree.sort(list, false);
         assertNull(sorted);
     }
 
@@ -27,7 +27,7 @@ public class BubbleTest {
     @Test
     public void testEmptyArrayList() {
         List expected = new ArrayList<>();
-        List sorted = bubble.sort(expected, false);
+        List sorted = tree.sort(expected, false);
         assertEquals(expected, sorted);
     }
 
@@ -35,7 +35,7 @@ public class BubbleTest {
     @Test
     public void testEmptyLinkedList() {
         List expected = new LinkedList();
-        List sorted = bubble.sort(expected, false);
+        List sorted = tree.sort(expected, false);
         assertEquals(expected, sorted);
     }
 
@@ -51,9 +51,8 @@ public class BubbleTest {
 
         expected.addAll(list);
 
-        List result = bubble.sort(list, false);
+        List result = tree.sort(list, false);
         Collections.sort(expected);
-
         assertEquals(expected, result);
     }
 
@@ -69,7 +68,7 @@ public class BubbleTest {
 
         expected.addAll(list);
 
-        List result = bubble.sort(list, false);
+        List result = tree.sort(list, false);
         Collections.sort(expected);
 
         assertEquals(expected, result);
@@ -87,7 +86,7 @@ public class BubbleTest {
 
         expected.addAll(list);
 
-        List result = bubble.sort(list, false);
+        List result = tree.sort(list, false);
         Collections.sort(expected);
 
         assertEquals(expected, result);
@@ -105,7 +104,7 @@ public class BubbleTest {
 
         expected.addAll(list);
 
-        List result = bubble.sort(list, false);
+        List result = tree.sort(list, false);
         Collections.sort(expected);
 
         assertEquals(expected, result);
