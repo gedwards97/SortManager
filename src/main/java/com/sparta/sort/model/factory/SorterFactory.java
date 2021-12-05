@@ -1,16 +1,16 @@
 package com.sparta.sort.model.factory;
 
 
-import com.sparta.sort.model.algorithms.BubbleSortAlgo;
-import com.sparta.sort.model.algorithms.QuickSortAlgo;
-import com.sparta.sort.model.algorithms.SortingAlgo;
+import com.sparta.sort.model.algorithms.*;
 
 public class SorterFactory {
     public static SortingAlgo getAlgo(String algoName) {
         if(algoName.equalsIgnoreCase("Bubble"))
-            return new BubbleSortAlgo();
+            return new BubbleSort();
         else if(algoName.equalsIgnoreCase("Quick"))
-            return new QuickSortAlgo();
+            return new QuickSort();
+        else if (algoName.equalsIgnoreCase("Tree"))
+            return new TreeSort();
         else
             return null;
     }

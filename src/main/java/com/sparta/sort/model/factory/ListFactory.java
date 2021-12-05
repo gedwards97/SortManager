@@ -1,27 +1,16 @@
 package com.sparta.sort.model.factory;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import com.sparta.sort.model.generator.ListGenerator;
 import java.util.List;
 
 public class ListFactory {
-    public static List getList(int[] intArr, String listType) {
-        // Determine list
-        List list;
-        if (listType.toLowerCase().equals("array")) {
-            list = new ArrayList<Integer>(intArr.length);
-        } else if (listType.toLowerCase().equals("linked")){
-            list = new LinkedList<Integer>();
+    public static List getList(int length, String dType, String listType) {
+        if (dType.equalsIgnoreCase("strings")) {
+            List<StringBuilder> list = ListGenerator.strList(listType, length);
+            return list;
         } else {
-            return null;
+            List<Integer> list = ListGenerator.intList(listType, length);
+            return list;
         }
-
-        // Fill list
-        for (int i : intArr) {
-            list.add(i);
-        }
-
-        // Return list
-        return list;
     }
 }

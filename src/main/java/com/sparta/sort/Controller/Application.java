@@ -3,24 +3,27 @@ package com.sparta.sort.controller;
 import com.sparta.sort.view.MainMenu;
 import com.sparta.sort.view.PerformanceView;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Application {
-    private static MainMenu menu = new MainMenu();
-    private static SortRunner sortRunner ;
-    private static UserInput userInput;
-    private static int[] unsorterdArray;
-    private static int[] sortedArray;
+    private MainMenu menu = new MainMenu();
+    private SortRunner sortRunner ;
+    private UserInput userInput;
+    private List unsorterdList;
+    private List sortedList;
 
     public void launch() {
         menu.run();
         if (menu.isComplete()) {
             userInput = menu.getUserInput();
-            sortRunner = new SortRunner(userInput.getDataStructureLength(), userInput.isTimeSort(),
+            sortRunner = new SortRunner(userInput.getDataType(), userInput.getDataStructureLength(), userInput.isTimeSort(),
                     userInput.isCompareSort(), userInput.getPrimaryAlgo(), userInput.getSecondaryAlgo());
-            unsorterdArray = sortRunner.getArray();
-            sortRunner.sort();
-            sortedArray = sortRunner.getArray();
+
+            if (sortRunner.getList() instanceof ArrayList) unsorterdList = new ArrayList();
+            else unsorterdList = new LinkedList();
+
+            unsorterdList.addAll(sortRunner.getList());
+            sortedList = sortRunner.sort();
         }
 
         if (sortRunner.isSorted()) {
@@ -30,7 +33,7 @@ public class Application {
     }
 
     private void viewController() {
-        PerformanceView.printArrays(unsorterdArray, sortedArray);
+        PerformanceView.printArrays(unsorterdList, sortedList);
 
         PerformanceView.printTimedPerformance(sortRunner.getPrimaryAlgo().getName(),
                 sortRunner.getPrimaryAlgo().getSortingTime());

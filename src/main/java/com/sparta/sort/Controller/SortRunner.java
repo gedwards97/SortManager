@@ -1,41 +1,57 @@
 package com.sparta.sort.controller;
 
+import com.sparta.sort.model.algorithms.BubbleSort;
+import com.sparta.sort.model.algorithms.QuickSort;
 import com.sparta.sort.model.algorithms.SortingAlgo;
+import com.sparta.sort.model.algorithms.TreeSort;
+import com.sparta.sort.model.factory.ListFactory;
 import com.sparta.sort.model.generator.ArrayGenerator;
+import com.sparta.sort.model.generator.ListGenerator;
 
-public class SortRunner {
-    private static int dataStructureLength;
-    private static boolean timeSort;
-    private static boolean compareSort;
-    private static SortingAlgo primaryAlgo;
-    private static SortingAlgo secondaryAlgo;
-    private static int[] array;
-    private static boolean sorted;
+import java.util.List;
+
+public class SortRunner<T> {
+    private int dataStructureLength;
+    private boolean timeSort;
+    private boolean compareSort;
+    private SortingAlgo primaryAlgo;
+    private SortingAlgo secondaryAlgo;
+    private int[] array;
+    private List list;
+    private boolean sorted;
 
 
-    public SortRunner(int initLength, boolean initTimed, boolean initCompare,
+    public SortRunner(String dataType, int dataStructureLength, boolean initTimed, boolean initCompare,
                       SortingAlgo initPrimary, SortingAlgo initSecondary) {
-        dataStructureLength = initLength;
+        this.dataStructureLength = dataStructureLength;
         timeSort = initTimed;
         compareSort = initCompare;
         primaryAlgo = initPrimary;
         secondaryAlgo = initSecondary;
         array = ArrayGenerator.generate(dataStructureLength);
+        // Create data and list type options in user input.
+        list = ListFactory.getList(dataStructureLength, dataType, "array");
         sorted = false;
     }
 
-    public void sort() {
-        setArray(ArrayGenerator.generate(dataStructureLength));
-        primaryAlgo.sortArray(array, 0 , dataStructureLength-1, timeSort);
+    public List sort() {
         sorted = true;
+        if (primaryAlgo instanceof TreeSort)
+            return ((TreeSort<?>) primaryAlgo).sort(list, timeSort);
+        else if (primaryAlgo instanceof BubbleSort)
+            return ((BubbleSort<?>) primaryAlgo).sort(list, timeSort);
+        else {
+            ((QuickSort<?>) primaryAlgo).setList(list);
+            return ((QuickSort<?>) primaryAlgo).sort(0, this.dataStructureLength, timeSort);
+        }
     }
 
-    public int[] getArray() {
-        return array;
+    public List getList() {
+        return list;
     }
 
     public void setArray(int[] array) {
-        SortRunner.array = array;
+        this.array = array;
     }
 
     public SortingAlgo getPrimaryAlgo() {
@@ -43,7 +59,7 @@ public class SortRunner {
     }
 
     public void setPrimaryAlgo(SortingAlgo primaryAlgo) {
-        SortRunner.primaryAlgo = primaryAlgo;
+        this.primaryAlgo = primaryAlgo;
     }
 
     public boolean isSorted() {
@@ -51,6 +67,6 @@ public class SortRunner {
     }
 
     public void setSorted(boolean sorted) {
-        SortRunner.sorted = sorted;
+        this.sorted = sorted;
     }
 }

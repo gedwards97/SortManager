@@ -10,6 +10,10 @@ public class MainMenu {
         System.out.println("--- Welcome to the Sort manager! ---");
         System.out.println("Please enter the size of the data structure you'd like to sort.");
         userInput.setDataStructureLength();
+        System.out.println("What sort of data would you like to sort?");
+        System.out.println("* Strings");
+        System.out.println("* Integers");
+        userInput.setDataType();
         System.out.println("Would you like to time sorting process? (Y / N)");
         userInput.setTimeSort();
         System.out.println("Would you like to compare two algorithms? (Y / N)");
@@ -18,6 +22,7 @@ public class MainMenu {
             System.out.println("Which sorting algorithm would you like to implement?");
             System.out.println("* Bubble");
             System.out.println("* Quick");
+            System.out.println("* Tree");
             userInput.setPrimaryAlgo();
         } else {
             System.out.println("SOZ - can't compare algos rn");
