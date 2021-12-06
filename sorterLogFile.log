@@ -30,3 +30,24 @@ java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "l
 [DEBUG] 2021-12-05 20:15:09,309 main com.sparta.sort.controller.Application - Retrieving user input.
 [DEBUG] 2021-12-05 20:15:09,310 main com.sparta.sort.controller.Application - Instantiating sortRunner
 [DEBUG] 2021-12-05 20:15:09,311 main com.sparta.sort.controller.SortRunner - Sorting list.
+[DEBUG] 2021-12-06 08:16:30,445 main com.sparta.sort.controller.SortRunner - Running application.
+[DEBUG] 2021-12-06 08:17:01,672 main com.sparta.sort.controller.SortRunner - Running application.
+[DEBUG] 2021-12-06 08:18:06,136 main com.sparta.sort.controller.Application - Retrieving user input.
+[DEBUG] 2021-12-06 08:18:06,136 main com.sparta.sort.controller.Application - Instantiating sortRunner
+[DEBUG] 2021-12-06 08:18:06,150 main com.sparta.sort.model.generator.ListGenerator - Generating StringBuilder List
+[DEBUG] 2021-12-06 08:18:06,151 main com.sparta.sort.controller.SortRunner - Sorting list.
+[DEBUG] 2021-12-06 08:18:34,067 main com.sparta.sort.controller.SortRunner - Running application.
+[DEBUG] 2021-12-06 08:18:52,763 main com.sparta.sort.controller.Application - Retrieving user input.
+[DEBUG] 2021-12-06 08:18:52,764 main com.sparta.sort.controller.Application - Instantiating sortRunner
+[DEBUG] 2021-12-06 08:18:52,765 main com.sparta.sort.model.generator.ListGenerator - GEnerating Integer List
+[DEBUG] 2021-12-06 08:18:52,765 main com.sparta.sort.controller.SortRunner - Sorting list.
+[DEBUG] 2021-12-06 08:19:24,006 main com.sparta.sort.controller.SortRunner - Running application.
+[DEBUG] 2021-12-06 08:19:33,301 main com.sparta.sort.controller.Application - Retrieving user input.
+[DEBUG] 2021-12-06 08:19:33,301 main com.sparta.sort.controller.Application - Instantiating sortRunner
+[DEBUG] 2021-12-06 08:19:33,302 main com.sparta.sort.model.generator.ListGenerator - GEnerating Integer List
+[DEBUG] 2021-12-06 08:19:33,302 main com.sparta.sort.controller.SortRunner - Sorting list.
+[DEBUG] 2021-12-06 08:20:22,194 main com.sparta.sort.controller.SortRunner - Running application.
+[DEBUG] 2021-12-06 08:20:35,935 main com.sparta.sort.controller.Application - Retrieving user input.
+[DEBUG] 2021-12-06 08:20:35,935 main com.sparta.sort.controller.Application - Instantiating sortRunner
+[DEBUG] 2021-12-06 08:20:35,936 main com.sparta.sort.model.generator.ListGenerator - GEnerating Integer List
+[DEBUG] 2021-12-06 08:20:35,936 main com.sparta.sort.controller.SortRunner - Sorting list.

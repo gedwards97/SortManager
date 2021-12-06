@@ -18,8 +18,7 @@ public class BubbleTest {
     @DisplayName("Test null input")
     @Test
     public void testNullInput() {
-        List list = null;
-        List sorted = bubble.sort(list, false);
+        List sorted = bubble.sort(null, false);
         assertNull(sorted);
     }
 

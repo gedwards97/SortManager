@@ -27,7 +27,7 @@ public class AlgorithmsTest {
 
     @DisplayName("Quick sort initiation")
     @Test
-    public void treeIniy() {
+    public void treeInit() {
         SortingAlgo tree = SorterFactory.getAlgo("tree");
         assertTrue(tree instanceof TreeSort);
     }
